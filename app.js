@@ -4,6 +4,8 @@ var io = require('socket.io')(http);
 
 app.set('io', io);
 
-http.listen(3000, function() {
-    console.log("servidor rodando");
-})
+
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+});
